@@ -1,25 +1,28 @@
 'use client'
 
-import { useEffect, useState } from 'react'
+import { Copy } from 'lucide-react'
 
 interface NotificationCardProps {
   message: string
+  visible: boolean
 }
 
-export default function NotificationCard({ message }: NotificationCardProps) {
-  const [visible, setVisible] = useState(false)
+export function showNotification(setVisible: (visible: boolean) => void) {
+  setVisible(true)
+  setTimeout(() => setVisible(false), 4000)
+}
 
-  const showNotification = () => {
-    setVisible(true)
-    setTimeout(() => setVisible(false), 10000) // Esconde a notificação após 4 segundos
-  }
-
+export default function NotificationCard({
+  message,
+  visible,
+}: NotificationCardProps) {
   return (
     <div
-      className={`absolute bottom-12 left-12 max-w-max p-5 rounded bg-gray-900 text-white shadow-lg transform transition-all duration-500 ease-in-out ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
+      className={`absolute flex items-center justify-between gap-2 flex-row bottom-12 right-12 max-w-[400px] p-5 rounded bg-blue shadow-lg transform transition-all duration-500 ease-in-out ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
     >
-      <p>{message}</p>
-      <span className="absolute left-1 bottom-1 w-[calc(100%-10px)] h-1.5 bg-gradient-to-r from-blue-400 to-blue-600 rounded transform origin-left scale-x-0 animate-load" />
+      <Copy className="size-5 text-gray-900" />
+      <p className="text-gray-800 font-heading font-semibold">{message}</p>
+      <span className="absolute left-1 bottom-1 w-[calc(100%-10px)] h-1.5 bg-gradient-to-r from-purple to-gray-600 rounded transform origin-left scale-x-0 animate-load" />
     </div>
   )
 }
