@@ -1,6 +1,5 @@
 import Image from 'next/image'
 
-import { Radio } from 'lucide-react'
 import logo from '../../assets/logo.svg'
 import AboutEvent from './about-event'
 import SubscriptionForm from './subscription-form'
