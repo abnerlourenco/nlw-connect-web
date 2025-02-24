@@ -1,8 +1,8 @@
 import Image from 'next/image'
 import logo from '../../../assets/logo.svg'
 import InviteLinkInput from './invite-link-input'
-import Ranking from './ranking'
-import Stats from './stats'
+import { Ranking } from './ranking'
+import { Stats } from './stats'
 
 interface InvitePageProps {
   params: Promise<{
@@ -41,7 +41,7 @@ export default async function Invite(props: InvitePageProps) {
 
             <InviteLinkInput inviteLink={InviteLink} />
 
-            <Stats />
+            <Stats subscribeId={subscriberId} />
           </div>
         </div>
       </div>

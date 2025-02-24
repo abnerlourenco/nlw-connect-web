@@ -5,7 +5,7 @@ import { InputField, InputIcon, InputRoot } from '@/components/input'
 import NotificationCard, {
   showNotification,
 } from '@/components/notification-card'
-import { Copy, CopyCheck, Link } from 'lucide-react'
+import { Copy, Link } from 'lucide-react'
 import { useState } from 'react'
 
 interface InviteLinkInputProps {
