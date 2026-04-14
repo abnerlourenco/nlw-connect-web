@@ -17,11 +17,11 @@ export async function Ranking() {
       <div className="space-y-4">
         <div className="relative rounded-xl bg-gray-700 border border-gray-600 p-6 flex flex-col justify-center gap-3">
           <span className="text-sm text-gray-300 leading-none">
-            <span className="font-semibold">1°</span> | {ranking[0].name}
+            <span className="font-semibold">1°</span> | {ranking.length > 0 ? ranking[0].name : 'sem ranking'}
           </span>
 
           <span className="font-heading font-semibold text-gray-2 leading-none">
-            {ranking[0].score}
+            {ranking.length > 0 ? ranking[0].score : 0}
           </span>
 
           <Image src={gold} alt="" className="absolute top-0 right-8" />
@@ -30,11 +30,11 @@ export async function Ranking() {
       <div className="space-y-4">
         <div className="relative rounded-xl bg-gray-700 border border-gray-600 p-6 flex flex-col justify-center gap-3">
           <span className="text-sm text-gray-300 leading-none">
-            <span className="font-semibold">2°</span> | {ranking[1].name}
+            <span className="font-semibold">2°</span> | {ranking.length > 1 ? ranking[1].name : 'sem ranking'}
           </span>
 
           <span className="font-heading font-semibold text-gray-2 leading-none">
-            {ranking[1].score}
+            {ranking.length > 1 ? ranking[1].score : 0}
           </span>
 
           <Image src={silver} alt="" className="absolute top-0 right-8" />
@@ -43,11 +43,11 @@ export async function Ranking() {
       <div className="space-y-4">
         <div className="relative rounded-xl bg-gray-700 border border-gray-600 p-6 flex flex-col justify-center gap-3">
           <span className="text-sm text-gray-300 leading-none">
-            <span className="font-semibold">3°</span> | {ranking[2].name}
+            <span className="font-semibold">3°</span> | {ranking.length > 2 ? ranking[2].name : 'sem ranking'}
           </span>
 
           <span className="font-heading font-semibold text-gray-2 leading-none">
-            {ranking[2].score}
+            {ranking.length > 2 ? ranking[2].score : 0}
           </span>
 
           <Image src={cooper} alt="" className="absolute top-0 right-8" />
