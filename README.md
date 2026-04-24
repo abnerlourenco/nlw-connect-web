@@ -2,7 +2,13 @@ This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-
 
 ## Getting Started
 
-First, run the development server:
+First,config .env file and execute the api generation by orval:
+
+```bash
+npx orval
+```
+
+Second, run the development server:
 
 ```bash
 npm run dev

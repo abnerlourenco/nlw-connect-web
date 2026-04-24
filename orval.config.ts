@@ -1,14 +1,15 @@
 import { defineConfig } from 'orval'
+import 'dotenv/config'
 
 export default defineConfig({
   api: {
-    input: 'http://localhost:3333/docs/json',
+    input: `${process.env.API_BASE_URL}/docs/json`,
     output: {
       target: './src/http/api.ts',
       client: 'fetch',
       httpClient: 'fetch',
       clean: true,
-      baseUrl: 'http://localhost:3333',
+      baseUrl: process.env.API_BASE_URL,
 
       override: {
         fetch: {

@@ -7,6 +7,7 @@ import silver from '../../../assets/medal-silver.svg'
 
 export async function Ranking() {
   const { ranking } = await getRanking()
+  console.log(ranking)
 
   return (
     <div className="w-full max-w-[440px] space-y-5">
