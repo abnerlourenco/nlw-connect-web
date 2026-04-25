@@ -3,6 +3,7 @@ import Image from 'next/image'
 import logo from '../../assets/logo.svg'
 import AboutEvent from './about-event'
 import SubscriptionForm from './subscription-form'
+import { Suspense } from 'react'
 
 export default function Home() {
   return (
@@ -17,8 +18,9 @@ export default function Home() {
       </div>
       <div className="flex gap-5 items-stretch flex-col md:flex-row">
         <AboutEvent />
-
-        <SubscriptionForm />
+        <Suspense fallback={<p>Carregando formulário...</p>}>
+          <SubscriptionForm />
+        </Suspense>
       </div>
     </div>
   )
